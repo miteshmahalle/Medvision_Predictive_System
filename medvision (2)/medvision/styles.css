@@ -1,0 +1,311 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.5em;
+    padding-left: 0em ;
+    background-color: rgba(37, 37, 37, 0.8); /* White background with 50% opacity */
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 500;
+}
+
+.nav-buttons .btn {
+    background-color: #053583;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-buttons .emergency-btn {
+    background-color: #d32f2f;
+}
+
+
+/* Hero Section */
+/* Hero Section with Background Image */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom: 9em;
+    padding-top: 9em;
+    background-image: url('medback.png'); /* Path to your background image */
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: relative; /* Full-screen height */
+    color: white;
+    
+}
+
+.hero-text h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: hsl(0, 0%, 100%); /* Ensure text is readable on the background */
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #ffffff; /* Light text color for contrast */
+}
+
+.get-started-btn {
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.hero-image img {
+    display: none; /* Hide the separate hero image since we have a background image */
+}
+
+/* Features Section */
+.features {
+    background-color: #ffffff;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0a192f;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.feature-card {
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.feature-card img {
+    height: 100px;
+}
+
+.feature-card h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.feature-card p {
+    font-size: 16px;
+}
+
+/* Vision and Mission */
+.vision-mission {
+    background-color: #f5f5f5;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.vision-mission h2 {
+    font-size: 28px;
+    color: #0a192f;
+}
+
+.vision-mission p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Testimonials */
+.testimonials {
+    background-color: #ffffff;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #0a192f;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.testimonial-card {
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.testimonial-card h4 {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #0a192f;
+}
+
+/* Footer */
+footer {
+    background-color: #0a192f;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.social-links a {
+    color: white;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 2em auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h2 {
+    text-align: center;
+    color: #0a192f; /* Health-related color */
+}
+
+.contact-container p {
+    text-align: center;
+    color: #555;
+}
+
+/* Contact Form */
+
+
+.contact-form {
+    margin-top: 2em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0a192f; /* Health-related color */
+    outline: none;
+    box-shadow: 0 0 5px #0a192f;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #0a192f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #00796b;
+}

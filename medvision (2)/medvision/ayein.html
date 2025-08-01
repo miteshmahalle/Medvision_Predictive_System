@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedVision | Digital Healthcare</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<style>
+  /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0A1931;
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-menu {
+    display: flex;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: white;
+    font-size: 16px;
+}
+
+.navbar-buttons {
+    display: flex;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('Images/medback.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 3em;
+}
+
+/* Features */
+.features {
+    text-align: center;
+    padding: 50px 5%;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Contact */
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    background-color: #0A1931;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #0A1931;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+<script> 
+function toggleMenu() {
+  var navbarMenu = document.getElementById("navbarNav");
+  navbarMenu.classList.toggle("active");
+}
+</script>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">MedVision</a>
+                <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
+                <div class="navbar-menu" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-buttons">
+                    <button class="btn emergency-button">Emergency Scan</button>
+                    <div class="dropdown">
+                        <button class="btn login-button">Login</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="loginPatient.html">Patient</a></li>
+                            <li><a href="loginDoctor.html">Doctor</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn register-button">Register</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="registerPatient.html">Patient</a></li>
+                            <li><a href="registerDoctor.html">Doctor</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>Instant Medical Data for Emergency Care</h2>
+            <p>MedVision helps medical personnel access critical patient data instantly and securely.</p>
+            <a href="#about" class="btn get-started-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Our Features</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h3>Emergency Access</h3>
+                <p>Instant access to medical data using biometrics or QR code.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Predictive Analytics</h3>
+                <p>AI-driven disease prediction models for preventive healthcare.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Data Security</h3>
+                <p>Blockchain-powered security ensures medical records are safe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="vision-mission" id="about">
+        <h2>About Us</h2>
+        <p>MedVision is dedicated to revolutionizing healthcare through technology, ensuring patient data is always accessible in emergencies.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>Have any questions or feedback? We'd love to hear from you!</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 MedVision. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

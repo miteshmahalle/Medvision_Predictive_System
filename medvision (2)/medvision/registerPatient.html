@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Patient Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0A1931, #185ADB);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-4 py-6">
+  <!-- Back Button -->
+  <a href="landing.html" class="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-orange-500 transition">
+    ⬅ Back
+  </a>
+
+  <!-- Form Container -->
+  <form 
+    action="register_patient.php" 
+    method="POST" 
+    enctype="multipart/form-data" 
+    onsubmit="return validatePatientForm()"
+    class="bg-white max-w-2xl w-full p-10 rounded-2xl shadow-2xl space-y-6"
+  >
+    <h2 class="text-3xl font-bold text-center text-blue-800">Patient Registration</h2>
+
+    <!-- Instructions Text -->
+    <p class="text-center text-gray-700 text-sm mb-6">
+      Please fill in your details carefully. Fields marked with <span class="text-red-500">*</span> are required.
+    </p>
+
+    <!-- Name Fields (Vertically Aligned) -->
+    <div class="grid grid-cols-1 gap-4">
+      <input type="text" name="first_name" placeholder="First Name" required class="input-style" title="Enter your first name">
+      <input type="text" name="middle_name" placeholder="Middle Name" class="input-style" title="Enter your middle name (optional)">
+      <input type="text" name="last_name" placeholder="Last Name" required class="input-style" title="Enter your last name">
+    </div>
+
+    <!-- Date + Email (Horizontally Aligned) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input type="date" name="dob" id="dob" required class="input-style" title="Enter your date of birth">
+      <input type="email" name="email" placeholder="Email" required class="input-style" title="Enter your email address">
+    </div>
+
+   <!-- Aadhar (Full width) -->
+<div class="grid grid-cols-1 gap-4">
+    <input type="text" name="aadhar_number" placeholder="Aadhar Number" required class="input-style" title="Enter your Aadhar Number">
+  </div>
+  
+  <!-- Address, Contact + Password (Grid aligned) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <textarea name="address" placeholder="Address" required class="input-style resize-none w-full" rows="3" title="Enter your residential address"></textarea>
+    <div class="grid grid-cols-0 md:grid-colblue gap-4">
+        <input type="tel" name="contact" placeholder="Contact Number" required class="input-style" title="Enter your contact number">
+        <input type="password" name="password" placeholder="Create Password" required class="input-style" title="Create a secure password">
+    </div>
+  </div>
+  
+  
+  
+    <!-- Medical Reports Upload -->
+    <div class="space-y-4">
+      <label class="block text-sm font-semibold text-gray-700 mb-1">Upload Medical Reports (PDFs)*:</label>
+      <div class="grid grid-cols-1 gap-4">
+        <div>
+          <label for="blood_report" class="block text-sm text-gray-700 mb-1">Blood Report</label>
+          <input type="file" name="blood_report" id="blood_report" accept="application/pdf" required class="input-style file:px-3 file:py-1.5 file:rounded file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700">
+        </div>
+
+        <div>
+          <label for="urine_report" class="block text-sm text-gray-700 mb-1">Urine Report</label>
+          <input type="file" name="urine_report" id="urine_report" accept="application/pdf" required class="input-style file:px-3 file:py-1.5 file:rounded file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700">
+        </div>
+
+        <div>
+          <label for="ecg_report" class="block text-sm text-gray-700 mb-1">ECG Report</label>
+          <input type="file" name="ecg_report" id="ecg_report" accept="application/pdf" required class="input-style file:px-3 file:py-1.5 file:rounded file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700">
+        </div>
+
+        <div>
+          <label for="xray_report" class="block text-sm text-gray-700 mb-1">X-Ray Report</label>
+          <input type="file" name="xray_report" id="xray_report" accept="application/pdf" required class="input-style file:px-3 file:py-1.5 file:rounded file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700">
+        </div>
+
+        <div>
+          <label for="vaccination_record" class="block text-sm text-gray-700 mb-1">Vaccination Record</label>
+          <input type="file" name="vaccination_record" id="vaccination_record" accept="application/pdf" required class="input-style file:px-3 file:py-1.5 file:rounded file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700">
+        </div>
+
+        <div>
+          <label for="previous_surgery" class="block text-sm text-gray-700 mb-1">Previous Surgery</label>
+          <input type="file" name="previous_surgery" id="previous_surgery" accept="application/pdf" required class="input-style file:px-3 file:py-1.5 file:rounded file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700">
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 rounded-xl transition duration-300">
+      Register
+    </button>
+  </form>
+
+  <!-- Input Style -->
+  <style>
+    .input-style {
+      width: 100%; /* Full width */
+      padding: 0.75rem; /* 12px padding */
+      border-radius: 0.75rem; /* Rounded corners */
+      border: 2px solid #D1D5DB; /* Light gray border */
+      transition: all 0.3s; /* Smooth transition */
+      font-size: 1rem; /* Default font size */
+    }
+
+    /* Focus state for the input */
+    .input-style:focus {
+      outline: none; /* Remove default outline */
+      border-color: #3b82f6; /* Blue border when focused */
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4); /* Soft blue glow */
+    }
+
+  </style>
+
+  <!-- Age Validation Script -->
+  <script>
+    function validatePatientForm() {
+      const dob = new Date(document.getElementById('dob').value);
+      const today = new Date();
+      const age = today.getFullYear() - dob.getFullYear();
+      const m = today.getMonth() - dob.getMonth();
+      const d = today.getDate() - dob.getDate();
+  
+      if (age < 18 || (age === 18 && (m < 0 || (m === 0 && d < 0)))) {
+        alert("Patient must be at least 18 years old.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
